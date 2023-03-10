@@ -17,7 +17,6 @@ export class TrackerPresentationComponent implements OnInit, AfterViewInit {
 
   @Input() public set ipInfo(data: any) {
     if(data) {
-      console.log(data)
       L.marker([data.latitude, data.longitude], {icon: this.icon}).addTo(this.map);
       this.map.flyTo([data.latitude, data.longitude], 15);
       this.ipInformation = data;
@@ -47,10 +46,6 @@ export class TrackerPresentationComponent implements OnInit, AfterViewInit {
 
   public getAddr() {
     this._tps.getIP(this.ipForm.value.ip)
-    // if (this.ipInfo) {
-    //   L.marker([this.ipInfo.latitude, this.ipInfo.longitude]).addTo(this.map);
-    //   this.map.flyTo([this.ipInfo.latitude, this.ipInfo.longitude], 15);
-    // }
   }
 
   private initMap(): void {

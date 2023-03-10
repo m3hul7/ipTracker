@@ -1,47 +1,47 @@
 <div class="d-flex flex-column h-100 position-relative">
-    <div class="title-container d-flex flex-column align-items-center justify-content-center">
+    <div class="title-container pt-4 d-flex flex-column align-items-center justify-content-start">
         <h2 class="text-light pb-2">IP Address Tracker</h2>
         <form [formGroup]="ipForm" (ngSubmit)="getAddr()">
-            <div class="bg-white rounded-4 overflow-hidden">
-                <input class="py-2 ps-4" type="search" name="ip-input" id="ip-input" placeholder="Search for any IP address or domain" formControlName="ip">
-                <button class="btn p-2 bg-black text-white rounded-0" type="submit">
+            <div class="d-flex bg-white rounded-4 overflow-hidden">
+                <input class="py-3 ps-4" type="text" name="ip-input" id="ip-input" placeholder="Search for any IP address or domain" formControlName="ip">
+                <button class="btn btn-search p-3 bg-black text-white rounded-0" type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14"><path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6"/></svg>
                 </button>
             </div>
         </form>    
     </div>
-    <div class="ip-info-container p-4 bg-white rounded-4 d-flex flex-sm-column flex-md-row position-absolute">
-        <div class="ip-info col-3 col-sm-12 col-md-3 d-flex flex-column align-items-sm-center align-items-md-start border-end">
+    <div class="ip-info-container p-4 bg-white rounded-4 d-flex flex-column flex-md-row position-absolute">
+        <div class="ip-info col-12 col-md-3 d-flex flex-column align-items-center align-items-md-start border-end">
             <span class="text-muted">IP ADDRESS</span>
             <ng-container *ngIf="this.ipInformation; else alt">
-                <span class="fs-4 text-sm-center text-md-start">{{this.ipInformation.ip}}</span>
+                <span class="fw-bold fs-4 text-sm-center text-md-start">{{this.ipInformation.ip}}</span>
             </ng-container>
             <ng-template #alt>
                 <span class="fs-2">---</span>
             </ng-template>
         </div>
-        <div class="ip-info px-3 px-sm-0 px-md-3 col-3 col-sm-12 col-md-3 d-flex flex-column align-items-sm-center align-items-md-start border-end">
+        <div class="ip-info px-3 px-sm-0 px-md-3 col-12 col-md-3 d-flex flex-column align-items-center align-items-md-start border-end">
             <span class="text-muted">LOCATION</span>
             <ng-container *ngIf="this.ipInformation; else alt">
-                <span class="fs-4 text-sm-center text-md-start">{{this.ipInformation.region}}</span>
+                <span class="fw-bold fs-4 text-sm-center text-md-start">{{this.ipInformation.city}} {{this.ipInformation.region}}, {{this.ipInformation.country}}</span>
             </ng-container>
             <ng-template #alt>
                 <span class="fs-2">---</span>
             </ng-template>
         </div>
-        <div class="ip-info px-3 px-sm-0 px-md-3 col-3 col-sm-12 col-md-3 d-flex flex-column align-items-sm-center align-items-md-start border-end border-sm-0">
+        <div class="ip-info px-3 px-sm-0 px-md-3 col-12 col-md-3 d-flex flex-column align-items-center align-items-md-start border-end border-sm-0">
             <span class="text-muted">TIMEZONE</span>
             <ng-container *ngIf="this.ipInformation; else alt">
-                <span class="fs-4 text-sm-center text-md-start">{{this.ipInformation.timezone.utc}}</span>
+                <span class="fw-bold fs-4 text-sm-center text-md-start">{{this.ipInformation.timezone.utc}}</span>
             </ng-container>
             <ng-template #alt>
                 <span class="fs-2">---</span>
             </ng-template>
         </div>
-        <div class="ip-info ps-3 px-sm-0 px-md-3 col-3 col-sm-12 col-md-3 d-flex flex-column align-items-sm-center align-items-md-start">
+        <div class="ip-info px-0 px-md-3 col-12 col-md-3 d-flex flex-column align-items-center align-items-md-start">
             <span class="text-muted">ISP</span>
             <ng-container *ngIf="this.ipInformation; else alt">
-                <span class="fs-4 text-sm-center text-md-start">{{this.ipInformation.connection.isp}}</span>
+                <span class="fw-bold fs-4 text-center text-md-start">{{this.ipInformation.connection.isp}}</span>
             </ng-container>
             <ng-template #alt>
                 <span class="fs-2">---</span>

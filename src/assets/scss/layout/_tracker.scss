@@ -7,25 +7,17 @@
 
 .ip-info-container {
     width: 70%;
-    top: 23%;
+    top: 21%;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
     z-index: 10;
 }
-// @include media-breakpoint-only(sm) {  
-//     .ip-info-container {
-//         width: 40%;
-//         .ip-info {
-//             border: 0;
-//         }
-//     }
-// }
 
-@media (min-width: 576px) and (max-width: 768px) {  
+@media (max-width: 768px) {  
     .ip-info-container {
-        width: 40%;
+        top: 18%;
         .ip-info {
             border: none !important;
         }

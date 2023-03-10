@@ -1,7 +1,11 @@
 #ip-input {
-    //  border-radius: $search-input-radius;
     width: 400px;
     outline: none;
     border: none;
-    // height: $search-input-height;
+}
+
+@media (max-width: 576px) {
+    #ip-input {
+        width: 300px;
+    }
 }
